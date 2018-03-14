@@ -54,10 +54,10 @@ public:
         bool confirmed = index.data(TransactionTableModel::ConfirmedRole).toBool();
         QVariant value = index.data(Qt::ForegroundRole);
         QColor foreground = option.palette.color(QPalette::Text);
-        if(qVariantCanConvert<QColor>(value))
-        {
+        //if(variant.canConvert(QMetaType::QColor))
+        //{
             foreground = qvariant_cast<QColor>(value);
-        }
+        //}
 
         painter->setPen(fUseBlackTheme ? QColor(255, 255, 255) : foreground);
         QRect boundingRect;
